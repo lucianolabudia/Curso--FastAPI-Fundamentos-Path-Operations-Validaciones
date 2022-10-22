@@ -19,6 +19,7 @@
 * Path Parameters
 * Query Parameters
 * Request Body y Response Body
+* Models
 
 ### Validaciones
 
