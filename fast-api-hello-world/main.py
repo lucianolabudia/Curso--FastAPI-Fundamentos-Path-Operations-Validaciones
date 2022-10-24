@@ -1,4 +1,5 @@
 #Python
+from doctest import Example
 from typing import Optional
 from enum import Enum
 
@@ -30,7 +31,8 @@ class Person(BaseModel):
     first_name: str = Field(
         ...,
         min_length=1,
-        max_length=50
+        max_length=50,
+        example="Nahir" # declarar ejemplo automatico por separado
     )
     last_name: str = Field(
         ...,
@@ -44,6 +46,18 @@ class Person(BaseModel):
     )
     hair_color: Optional[HairColor] = Field(default=None)
     is_married: Optional[bool] = Field(default=None)
+
+    # Request Body automáticos
+    # class Config: 
+    #     schema_extra = {
+    #         "example": {
+    #             "first_name": "Luciano",
+    #             "last_name": "Labudia",
+    #             "age": 31,
+    #             "hair_color": "black",
+    #             "is_married": False
+    #         }
+    #     }
 
 
 #===============================
@@ -100,6 +114,5 @@ def update_person(
 ):
     results = person.dict() #convertir a diccionario
     results.update(location.dict()) #unir el diccionario, swagger no soporta otra forma q no sea esta
-    
-    return person
+    return results
 

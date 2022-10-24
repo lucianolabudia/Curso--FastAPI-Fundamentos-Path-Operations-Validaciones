@@ -27,5 +27,7 @@
 * Path Parameters
 * Request Body
 * Models
+* Tipos de datos especiales
 
 ### Examples
+* Creando ejemplos de Request Body automáticos
