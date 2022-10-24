@@ -31,3 +31,4 @@
 
 ### Examples
 * Creando ejemplos de Request Body automáticos
+* Creando ejemplos de Path y Query parameters automáticos
