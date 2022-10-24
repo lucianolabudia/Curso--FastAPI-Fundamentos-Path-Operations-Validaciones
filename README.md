@@ -25,5 +25,7 @@
 * Query Parameters
 * Explorando más parameters
 * Path Parameters
+* Request Body
+
 
 ### Examples
