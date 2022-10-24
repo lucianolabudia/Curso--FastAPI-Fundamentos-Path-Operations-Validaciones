@@ -23,5 +23,7 @@
 
 ### Validaciones
 * Query Parameters
+* Explorando más parameters
+* Path Parameters
 
 ### Examples
