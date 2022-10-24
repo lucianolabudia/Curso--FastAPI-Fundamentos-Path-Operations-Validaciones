@@ -22,5 +22,6 @@
 * Models
 
 ### Validaciones
+* Query Parameters
 
 ### Examples
