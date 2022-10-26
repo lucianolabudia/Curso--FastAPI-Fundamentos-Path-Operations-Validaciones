@@ -9,6 +9,7 @@ from pydantic import Field
 
 #FastAPI
 from fastapi import FastAPI
+from fastapi import status
 from fastapi import Body, Query, Path
 
 app = FastAPI()
@@ -27,7 +28,7 @@ class Location(BaseModel):
     state: str
     country: str
 
-class Person(BaseModel):
+class PersonBase(BaseModel):
     first_name: str = Field(
         ...,
         min_length=1,
@@ -47,6 +48,15 @@ class Person(BaseModel):
     hair_color: Optional[HairColor] = Field(default=None)
     is_married: Optional[bool] = Field(default=None)
 
+
+class Person(PersonBase):    
+    password: str = Field(..., min_length=8)
+
+class PersonOut(PersonBase):
+    pass
+
+
+# ==============================================
     # Request Body automáticos
     # class Config: 
     #     schema_extra = {
@@ -62,19 +72,29 @@ class Person(BaseModel):
 
 #===============================
 
-@app.get("/")
+@app.get(
+    path="/", 
+    status_code=status.HTTP_200_OK
+    )
 def home():
     return {"Hello": "World"}
 
 # Request and Response Body
-@app.post("/person/new")
+@app.post(
+    path="/person/new", 
+    response_model=PersonOut,
+    status_code=status.HTTP_201_CREATED
+    )
 def create_person(person: Person = Body(...)):
     return person
 
 
 # Validaciones: Query Parameters
 
-@app.get("/person/detail")
+@app.get(
+    path="/person/detail",
+    status_code=status.HTTP_200_OK
+    )
 def show_person(
     name: Optional[str] = Query(
         None, 

@@ -32,3 +32,25 @@
 ### Examples
 * Creando ejemplos de Request Body automáticos
 * Creando ejemplos de Path y Query parameters automáticos
+
+# Curso de FastAPI: Modularización, Datos Avanzados y Errores - PLATZI
+
+[Link del curso!](https://platzi.com/cursos/fastapi-modularizacion-datos/)
+
+## Temario y recursos del Curso de FastAPI
+
+### Bienvenida
+* ¿Qué necesitas para seguir aprendiendo FastAPI?
+
+### Refactorización y modularización
+* Response Model
+* Mejorando la calidad del código: eliminando líneas duplicadas
+* Status Code personalizados
+
+### Entradas de datos avanzadas
+
+### Manejo de errores
+
+### Documentación interactiva
+
+### Tu primera API
